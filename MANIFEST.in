@@ -1,2 +1,2 @@
 include *.md *.txt *.rst
-recursive-include includes *.c *.h
+recursive-include _cffi_build *.c *.h

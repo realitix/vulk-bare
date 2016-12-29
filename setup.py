@@ -1,23 +1,16 @@
-from setuptools import setup, Extension
-
-
-vulkbaremodule = Extension(
-    'vulkbare', sources=['vulkbaremodule.c'],
-    include_dirs=['includes']
-)
+from setuptools import setup
 
 
 setup(
     name="vulkbare",
-    version='1.0.1',
-    packages=[],
+    version='1.1.0',
+    packages=['vulkbare'],
     author="realitix",
     author_email="realitix@gmail.com",
     description="Vulk 3D Engine C utils functions",
     long_description="Vulk 3D Engine C utils functions",
-    install_requires=[],
-    setup_requires=[],
-    tests_require=[],
+    install_requires=["cffi"],
+    setup_requires=["cffi"],
     include_package_data=True,
     url="http://github.com/realitix/vulk-bare",
     classifiers=[
@@ -33,5 +26,6 @@ setup(
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
     license="Apache2",
-    ext_modules=[vulkbaremodule]
+    ext_package="vulkbare",
+    cffi_modules=["_cffi_build/vulkbare_build.py:ffi"]
 )
