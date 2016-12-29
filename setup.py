@@ -1,10 +1,10 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 setup(
     name="vulkbare",
-    version='1.1.0',
-    packages=['vulkbare'],
+    version='1.1.1',
+    packages=find_packages(),
     author="realitix",
     author_email="realitix@gmail.com",
     description="Vulk 3D Engine C utils functions",
