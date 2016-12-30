@@ -1,9 +1,8 @@
 from setuptools import setup, find_packages
 
-
 setup(
     name="vulkbare",
-    version='1.1.1',
+    version='1.1.5',
     packages=find_packages(),
     author="realitix",
     author_email="realitix@gmail.com",
