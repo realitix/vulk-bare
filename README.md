@@ -7,26 +7,39 @@ It provides a lot of tools.
 
 ## Provided functions
 
-### load_image
+```python
+def load_image(buf, request_components=0):
+    """Load a png or jpeg image into a bitmap buffer.
 
-```
-(memoryview, x, y, n) = load_image(buffer, components=0)
+    Args:
+        buf (Buffer): Buffer to load
+        request_components (int): If you want to force number of components
 
-Load an image in buffer (opened in binary mode) and return the corresponding
-bitmap.
+    Returns:
 
-*Parameters:*
+        A tuple containing:
 
-- `buffer`: A python buffer: open('file.png', 'rb').read()
-- `components`: Number of desired components in image
-                (R=1, RG=2, RGB=3, RGBA=4). If 0, it takes the image number.
+        - Bitmap buffer
+        - width of bitmap
+        - height of bitmap
+        - number of components
+    """
 
-*Returns:*
+def resize_image(buf, width, height, num_channels, new_width, new_height):
+    """Resize an image
 
-Tuple containing:
+    Args:
+        buf (Buffer): Buffer coming from `load_image`
+        width (int): Width of `buf`
+        height (int): Height of `buf`
+        num_channels (int): Number of channels in `buf` (RGBA=4)
+        new_width (int): Desired width
+        new_height (int): Desired height
 
-- `memoryview`: The bitmap in memoryview
-- `x`: Image's width
-- `y`: Image's height
-- `n`: Number of channel in image (1, 2, 3, 4)
+    Returns:
+        Buffer: Resized image
+
+    Raises:
+        ResizeError: If an error occurs during resize
+    """
 ```
